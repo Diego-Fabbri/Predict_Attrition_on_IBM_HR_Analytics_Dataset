@@ -14,8 +14,6 @@ library(writexl)
 library(ggplot2)
 
 #Setup folders in the working directory
-dir.create("Datasets")                      #save input datasets
-dir.create("Datasets/Preprocessed_datasets")#save preprocessed datasets
 dir.create("figs")                          #save plots' images
 dir.create("figs/Correlation")              #Save Correlation plots
 
@@ -61,15 +59,62 @@ HR <- as.data.frame(HR %>%
                                                       (EducationField == "Technical Degree") ~ "Technical")))                    
                     
 HR <- as.data.frame(HR %>%
-                      mutate(JobRole=case_when( (JobRole == "Healthcare Representative") ~ "HealthcareRep",
-                                                (JobRole == "Human Resources") ~ "HR",
-                                                (JobRole == "Laboratory Technician") ~ "LabTechnician",
-                                                (JobRole == "Manager") ~ "Manager",
-                                                (JobRole == "Manufacturing Director") ~ "ManufacturingDir",
-                                                (JobRole == "Research Director") ~ "ResearchDir",
-                                                (JobRole == "Research Scientist") ~ "ResearchSc",
-                                                (JobRole == "Sales Executive") ~ "SalesExe",
-                                                (JobRole == "Sales Representative") ~ "SalesRep")))
+                      mutate(JobRole=case_when((JobRole == "Healthcare Representative") ~ "HealthcareRep",
+                                              (JobRole == "Human Resources") ~ "HR",
+                                              (JobRole == "Laboratory Technician") ~ "LabTechnician",
+                                              (JobRole == "Manager") ~ "Manager",
+                                              (JobRole == "Manufacturing Director") ~ "ManufacturingDir",
+                                              (JobRole == "Research Director") ~ "ResearchDir",
+                                              (JobRole == "Research Scientist") ~ "ResearchSc",
+                                              (JobRole == "Sales Executive") ~ "SalesExe",
+                                              (JobRole == "Sales Representative") ~ "SalesRep")))
+
+HR <- as.data.frame(HR %>%
+                      mutate(Education=case_when((Education == 1) ~ "BelowCollege",
+                                                 (Education == 2) ~ "College",
+                                                 (Education == 3) ~ "Bachelor",
+                                                 (Education == 4) ~ "Master",
+                                                 (Education == 5) ~ "Doctor")))
+HR <- as.data.frame(HR %>%
+                      mutate(EnvironmentSatisfaction=case_when(
+                                                       (EnvironmentSatisfaction == 1) ~ "Low",
+                                                       (EnvironmentSatisfaction == 2) ~ "Medium",
+                                                       (EnvironmentSatisfaction == 3) ~ "High",
+                                                       (EnvironmentSatisfaction == 4) ~ "VeryHigh")))
+HR <- as.data.frame(HR %>%
+                      mutate(JobInvolvement=case_when(
+                                                (JobInvolvement == 1) ~ "Low",
+                                                (JobInvolvement == 2) ~ "Medium",
+                                                (JobInvolvement == 3) ~ "High",
+                                                (JobInvolvement == 4) ~ "VeryHigh")))
+HR <- as.data.frame(HR %>%
+                      mutate(JobSatisfaction=case_when(
+                                              (JobSatisfaction == 1) ~ "Low",
+                                              (JobSatisfaction == 2) ~ "Medium",
+                                              (JobSatisfaction == 3) ~ "High",
+                                              (JobSatisfaction == 4) ~ "VeryHigh")))
+
+HR <- as.data.frame(HR %>%
+                      mutate(RelationshipSatisfaction = case_when(
+                                                          (RelationshipSatisfaction == 1) ~ "Low",
+                                                          (RelationshipSatisfaction == 2) ~ "Medium",
+                                                          (RelationshipSatisfaction == 3) ~ "High",
+                                                          (RelationshipSatisfaction == 4) ~ "VeryHigh")))
+
+HR <- as.data.frame(HR %>%
+                      mutate(WorkLifeBalance = case_when(
+                                                (WorkLifeBalance == 1) ~ "Bad",
+                                                (WorkLifeBalance == 2) ~ "Good",
+                                                (WorkLifeBalance == 3) ~ "Better",
+                                                (WorkLifeBalance == 4) ~ "Best")))
+
+HR <- as.data.frame(HR %>%
+                      mutate(PerformanceRating = case_when(
+                                                    (PerformanceRating == 1) ~ "Low",
+                                                    (PerformanceRating == 2) ~ "Good",
+                                                    (PerformanceRating == 3) ~ "Excellent",
+                                                    (PerformanceRating == 4) ~ "Outstanding")))
+
 
 ############################# Correlation ######################################
 ################################################################################
@@ -78,7 +123,7 @@ library(ggcorrplot)
 
 HR_numeric <- select(HR[,-c(9)], where(is.numeric)) #Numeric variables
 Correlation_matrix <- cor(HR_numeric) 
-Correlation_matrix
+#Correlation_matrix
 
 Correlation_matrix_plot <- ggcorrplot(Correlation_matrix, 
                                       outline.col = "black",

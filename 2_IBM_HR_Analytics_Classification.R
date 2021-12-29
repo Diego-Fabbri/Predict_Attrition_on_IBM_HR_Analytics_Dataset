@@ -23,7 +23,8 @@ library(MLeval)
 library(plotROC)
 
 #Import Dataset
-data <- read_csv("WA_Fn-UseC_-HR-Employee-Attrition.csv")
+library(readxl)
+data <- read_excel("IBM HR Preprocessed.xlsx")
 data <- as.data.frame(data)
 str(data)
 
@@ -33,8 +34,8 @@ view(freq(data))
 view(descr(data))
 view(dfSummary(data))
 
-#Remove variables with only one outcome
-data <- data[,-c(9,22,27)]
+#Remove ID variable
+data <- data[,-9]
 
 #Define proportion for training dataset
 proportion <- 0.7
