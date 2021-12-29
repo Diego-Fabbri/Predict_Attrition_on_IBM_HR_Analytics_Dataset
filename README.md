@@ -12,3 +12,5 @@ Project's files are:
 6. *Models' results.xlsx* tables all algorithms' performance indicators which are taken into account;
 7. *Time Elapsed.png* plots how algorithms' total elapsed time is distributed;
 8. *Console output.txt* stores total script's time elapsed and detailed information about algorithms' execution.
+
+You can find further insigths [here](http://inseaddataanalytics.github.io/INSEADAnalytics/groupprojects/January2018FBL/IBM_Attrition_VSS.html#business_problem).
