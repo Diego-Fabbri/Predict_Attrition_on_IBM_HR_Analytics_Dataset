@@ -1,4 +1,4 @@
-# Predict_Attrition_on_IBM_HR_Analytics_Dataset
+# Predict Attrition on IBM HR Analytics Dataset
 This project aims at predicting employee attrition using IBM HR Analytics dataset. 
 The script implements 9 Machine Learning algorithms with CARET package in order to solve a binary classification problem. 
 Algorithms' plots, results and resampling plots are exported as output files. 
