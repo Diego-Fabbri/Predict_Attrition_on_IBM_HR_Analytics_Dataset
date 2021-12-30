@@ -11,6 +11,7 @@ Project's files are:
 5. *IBM HR Preprocessed.xlsx* is the output dataset after preprocessing;
 6. *Models' results.xlsx* tables all algorithms' performance indicators which are taken into account;
 7. *Time Elapsed.png* plots how algorithms' total elapsed time is distributed;
-8. *Console output.txt* stores total script's time elapsed and detailed information about algorithms' execution.
+8. *Console output.txt* stores total script's time elapsed and detailed information about algorithms' execution;
+9. *IBM_HR_Analytics_Dashboard.pbix* is a PowerBI dashboard for a better data understanding.
 
 You can find further insights [here](http://inseaddataanalytics.github.io/INSEADAnalytics/groupprojects/January2018FBL/IBM_Attrition_VSS.html#business_problem).
