@@ -153,7 +153,7 @@ Correlation_matrix_plot
 ggsave("Correlation Matrix.png", path = "./figs/Correlation")
 
 
-#Get highly correlated variable (Correlation >=0.55)
+#Get highly correlated variable (Correlation >=0.5 or Correlation <= -0.5)
 for (i in 1:nrow(Correlation_matrix)) {
   for (j in 1:ncol(Correlation_matrix)) {
     if(i<j && (Correlation_matrix[i,j]>=0.5|Correlation_matrix[i,j]<=-0.5)){
