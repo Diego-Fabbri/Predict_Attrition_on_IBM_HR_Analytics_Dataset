@@ -4,7 +4,7 @@ The script implements 9 Machine Learning algorithms with CARET package in order 
 Algorithms' plots, results and resampling plots are exported as output files. The project also provides a PowerBI dashboard for data visualization and further insigths gathering.
 
 Project's files are:
-1. *WA_Fn-UseC_-HR-Employee-Attrition.csv* is the source dataset available [here](https://www.kaggle.com/pavansubhasht/ibm-hr-analytics-attrition-dataset);
+1. `WA_Fn-UseC_-HR-Employee-Attrition.csv` is the source dataset available [here](https://www.kaggle.com/pavansubhasht/ibm-hr-analytics-attrition-dataset);
 2. *figs* folder contains plots of confusion matrices, ROC curves, correlation, models' performances and variables' importance;
 3. *1_IBM_HR_Analytics_Preprocessing.R* is the first R script which imports the dataset and proprocess it;
 4. *2_IBM_HR_Analytics_Classification.R* is the second R script which performs 9 Machine Learning algorithms using CARET package;
